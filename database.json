@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "password": "password1"
+    },
+    {
+      "username": "user2",
+      "password": "password2"
+    },
+    {},
+    {
+      "username": "Asmaa",
+      "password": "Asmaa1"
+    },
+    {
+      "username": "Asmaaa",
+      "password": "$2b$10$MLF56mlyePVAR07K81TgnelKizy8khH/tAJ16dzp4iHw1DApENCw6"
+    },
+    {
+      "username": "what",
+      "password": "$2b$10$MC1bQCMm7v9Cw5SwuvYoAeCBi7HiL7RrrWN31UiKQg4WifrD7r4Ai"
+    },
+    {
+      "username": "aaaaa",
+      "password": "$2b$10$Lmimpd0ctze3IVHUEg1G9uum0A2TxQ5C98.dmS6uwmxcfsixGm6jO"
+    },
+    {
+      "username": "aaaaaa",
+      "password": "$2b$10$eAsjN.jN460nK5Bv.STTR.vyt4cXrg8FaJoBnBINuky4UQWgojM32"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1674220800000,
+      "task": "Buy groceries",
+      "user": "user1"
+    },
+    {
+      "id": 1674220810000,
+      "task": "Read a book",
+      "user": "user1"
+    },
+    {
+      "id": 1674220820000,
+      "task": "Complete project",
+      "user": "user2"
+    },
+    {
+      "id": 1674220830000,
+      "task": "Plan vacation",
+      "user": "user2"
+    },
+    {
+      "id": 1738164182357,
+      "task": "go to spa"
+    },
+    {
+      "id": 1738164260518,
+      "task": "cleaning"
+    },
+    {
+      "id": 1738165661861,
+      "task": "shopping",
+      "user": "Asmaa"
+    },
+    {
+      "id": 1738165751293,
+      "task": "cleaning",
+      "user": "Asmaa"
+    },
+    {
+      "id": 1738165863869,
+      "task": "go to spa",
+      "user": "Asmaa"
+    },
+    {
+      "id": 1738166277726,
+      "task": "swimming",
+      "user": "Asmaa"
+    },
+    {
+      "id": 1738169351619,
+      "task": "asmaa",
+      "user": "Asmaa"
+    },
+    {
+      "id": 1738176693385,
+      "task": "cleaning",
+      "user": "Asmaaa"
+    },
+    {
+      "id": 1738176696654,
+      "task": "shopping",
+      "user": "Asmaaa"
+    },
+    {
+      "id": 1738178536023,
+      "task": "sxdsc",
+      "user": "Asmaaa"
+    },
+    {
+      "id": 1738181177682,
+      "task": "swimming",
+      "user": "Asmaaa"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light text */
+        }
+        .register-container {
+            background: #2a2a2a; /* Darker container */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: slideIn 0.8s ease-in-out;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #bb86fc; /* Neon purple */
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #bb86fc; /* Neon purple */
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bb86fc; /* Neon purple border */
+            border-radius: 8px;
+            font-size: 16px;
+            background: #333333; /* Dark input background */
+            color: #e0e0e0; /* Light text */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input:focus {
+            border-color: #03dac6; /* Neon teal */
+            box-shadow: 0 0 8px rgba(3, 218, 198, 0.5); /* Glow effect */
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #bb86fc; /* Neon purple */
+            color: #1a1a1a; /* Dark text */
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background: #03dac6; /* Neon teal */
+            transform: translateY(-2px);
+        }
+        .error-message {
+            color: #ff6b6b; /* Red for errors */
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .success-message {
+            color: #03dac6; /* Neon teal for success */
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Register</button>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorMessage.textContent = '';
+            successMessage.textContent = '';
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (response.ok) {
+                    successMessage.textContent = 'Registration successful! You can now log in.';
+                    window.location.href = '/public/login.html';
+                    
+                } else {
+                    const error = await response.text();
+                    errorMessage.textContent = error || 'Registration failed. Please try again.';
+                }
+            } catch (err) {
+                errorMessage.textContent = 'An error occurred. Please try again later.';
+            }
+        });
+    </script>
+</body>
+</html>
